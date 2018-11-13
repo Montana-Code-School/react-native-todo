@@ -4,7 +4,6 @@ import { View, Text, StyleSheet, SafeAreaView, Platform } from 'react-native';
 
 // create a component
 const TodoHeader = (props) => {
-  console.log('Platform === ', Platform)
   return (
     <SafeAreaView style={styles.container}>
       <Text style={styles.text}>Todo Header</Text>
