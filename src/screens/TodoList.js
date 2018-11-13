@@ -21,8 +21,12 @@ class TodoList extends Component {
     ]
   }
 
-  onPressItem = () => {
-
+  onPressItem = (index) => {
+    const todos = [...this.state.todos]
+    const todo = {...todos[index]}
+    todo.completed = !todo.completed
+    todos[index] = todo
+    this.setState({ todos })
   }
 
   render() {
@@ -31,8 +35,8 @@ class TodoList extends Component {
         ListHeaderComponent={TodoHeader}
         data={this.state.todos}
         keyExtractor={({ id }) => `${id}`}
-        renderItem={(item, index) => {
-          return <TodoItem {...item}
+        renderItem={(item) => {
+          return <TodoItem {...item} index={item.index} pressHandler={this.onPressItem}
         />}}
       />
     );
