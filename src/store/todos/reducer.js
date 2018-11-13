@@ -10,6 +10,10 @@ const initialState = {
       id: 2,
       task: 'Learn other stuff',
       completed: false,
+    }, {
+      id: 3,
+      task: 'Add reselector',
+      completed: false,
     }
   ]
 }
