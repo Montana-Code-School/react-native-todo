@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { FlatList } from 'react-native';
 import TodoHeader from '../components/TodoHeader'
 import TodoItem from '../components/TodoItem'
+import TodoListFooterWithStore from '../container/TodoListFooterWithStore'
 
 // create a component
 class TodoList extends Component {
@@ -14,6 +15,7 @@ class TodoList extends Component {
     return (
       <FlatList
         ListHeaderComponent={TodoHeader}
+        ListFooterComponent={TodoListFooterWithStore}
         data={this.props.todos}
         keyExtractor={({ id }) => `${id}`}
         renderItem={(item) => {
