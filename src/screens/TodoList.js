@@ -1,9 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import { connect } from 'react-redux'
-
-import { toggleTodo } from '../store/todos/actions'
+import { FlatList } from 'react-native';
 import TodoHeader from '../components/TodoHeader'
 import TodoItem from '../components/TodoItem'
 
@@ -27,27 +24,5 @@ class TodoList extends Component {
   }
 }
 
-// define your styles
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#2c3e50',
-  },
-});
-
-function mapStateToProps(state) {
-  return {
-    todos: state.todosStore.todos
-  }
-}
-
-function mapDispatchToProps(dispatch) {
-  return {
-    toggleTodo: (index) => dispatch(toggleTodo(index))
-  }
-}
-
 //make this component available to the app
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default TodoList;
